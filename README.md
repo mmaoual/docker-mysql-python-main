@@ -19,6 +19,7 @@ Un docker-compose est implémenté pour le lancement global de l'API (base + fas
 # Installation et lancement  
   
 liste des instructions à exécuter pour lancer l'api :  
+  
 cd backend  
 docker image build . -t mmaoual/top250_api:latest -f ./Dockerfile  
 docker push mmaoual/top250_api:latest  
