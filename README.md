@@ -7,7 +7,7 @@ L’objectif de ce projet est de choisir, mettre en place, et peupler une base d
   
 # Choix et création de la base de donées  
 
-On a choisi d'implémenter la base de données du top 250 des transferts des joueurs de football (top250-00-19.csv) dans une base mySql.  
+On a choisi de gérer le fichier top 250 des transferts des joueurs de football "top250-00-19.csv" dans une base de données relationnelle MySql.  
 
 Une seule table sera créée avec une clé primaire composée des champs "Name", "Team_from" et "Team_to".  
 
@@ -33,6 +33,7 @@ docker-compose up
 liste des instructions à exécuter pour arrêter l'api :  
   
 docker-compose down  
+docker volume prune -f  
 docker image rm -f mmaoual/top250_api:latest  
 docker image rm -f mmaoual/top250_db:latest  
   
