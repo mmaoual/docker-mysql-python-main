@@ -1,10 +1,20 @@
-# PROJET 3 : Mysql Python
+# PROJET 3 : Mysql Python  
   
-# Contexte
+# Contexte  
   
 L’objectif de ce projet est de choisir, mettre en place, et peupler une base de données à partir d’un jeu de données de l’open data, et d’implémenter une API permettant de requêter cette base de données.
+
+# Choix et créationde la base de donées  
+
+On a choisi d'implémenter la base de données du top 250 des transferts des joueurs de football (top250-00-19.csv) dans une base mySql.  
+
+Une seule table sera créée avec une clé primaire composée des champs "Name", "Team_from" et "Team_to".  
+
+Le déploiement s'effectue via deux containers : un pour l'Api fastApi et l'autre pour la base mySql.  
+
+Un docker-compose est implémenté pour le lancement global de l'API (base + fastApi)  
   
-# Installation et lancement
+# Installation et lancement  
   
 liste d'instructions à exécuter pour lancer l'api :  
 cd backend  
