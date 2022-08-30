@@ -33,7 +33,7 @@ docker-compose up
 liste des instructions à exécuter pour arrêter l'api :  
   
 docker-compose down  
-docker volume prune -f  
+# docker volume prune -f  
 docker image rm -f mmaoual/top250_api:latest  
 docker image rm -f mmaoual/top250_db:latest  
   
