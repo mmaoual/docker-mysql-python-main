@@ -4,7 +4,7 @@
   
 L’objectif de ce projet est de choisir, mettre en place, et peupler une base de données à partir d’un jeu de données de l’open data, et d’implémenter une API permettant de requêter cette base de données.
 
-# Choix et créationde la base de donées  
+# Choix et création de la base de donées  
 
 On a choisi d'implémenter la base de données du top 250 des transferts des joueurs de football (top250-00-19.csv) dans une base mySql.  
 
