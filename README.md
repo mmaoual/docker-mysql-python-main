@@ -3,7 +3,8 @@
 # Contexte  
   
 L’objectif de ce projet est de choisir, mettre en place, et peupler une base de données à partir d’un jeu de données de l’open data, et d’implémenter une API permettant de requêter cette base de données.
-
+  
+  
 # Choix et création de la base de donées  
 
 On a choisi d'implémenter la base de données du top 250 des transferts des joueurs de football (top250-00-19.csv) dans une base mySql.  
@@ -14,9 +15,10 @@ Le déploiement s'effectue via deux containers : un pour l'Api fastApi et l'autr
 
 Un docker-compose est implémenté pour le lancement global de l'API (base + fastApi)  
   
+    
 # Installation et lancement  
   
-liste d'instructions à exécuter pour lancer l'api :  
+liste des instructions à exécuter pour lancer l'api :  
 cd backend  
 docker image build . -t mmaoual/top250_api:latest -f ./Dockerfile  
 docker push mmaoual/top250_api:latest  
@@ -26,7 +28,9 @@ docker push mmaoual/top250_db:latest
 cd ..  
 docker-compose up  
   
-liste d'instructions à exécuter pour arrêter l'api :  
+    
+liste des instructions à exécuter pour arrêter l'api :  
+  
 docker-compose down  
 docker volume prune -f  
 docker image rm -f mmaoual/top250_api:latest  
