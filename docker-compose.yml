@@ -1,14 +1,14 @@
 version: '3.7'
 services:
     backend:
-        image: mmaoual/top250_api:1.0.1
+        image: mmaoual/top250_api:latest
         container_name: backend
         ports:
         - "8000:8000"
         depends_on:
             - mysql
     mysql:
-        image: mmaoual/top250_db:7.0.0
+        image: mmaoual/top250_db:latest
         container_name: mysql
         hostname: mysql
         environment:

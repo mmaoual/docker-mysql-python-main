@@ -42,10 +42,9 @@ class Football_transfert(BaseModel):
     Market_value: str
     Transfer_fee: float
 
-
-@app.get("/Top_250")
-async def read_all():
-    return connection.execute(football_transfers.select()).fetchall()
+@app.get("/top_250")
+async def read_all(limit: int):
+    return connection.execute(football_transfers.select().limit(limit)).fetchall()
 
 @app.get("/{name}")
 async def read_by_name(name: str):
@@ -65,10 +64,10 @@ async def write_football_transfert(footballTransfert: Football_transfert):
         Market_value = footballTransfert.Market_value,
         Transfer_fee = footballTransfert.Transfer_fee
     ))
-    return connection.execute(football_transfers.select()).fetchall()
+    return connection.execute(football_transfers.select().where(football_transfers.c.Name == footballTransfert.Name)).fetchall()
 
 @app.put("/{name}")
-async def update_football_transfert(name: str, footballTransfert: Football_transfert):
+async def update_football_transfert(name: str, team_from: str, team_to: str, footballTransfert: Football_transfert):
     connection.execute(football_transfers.update().values(
         Name = footballTransfert.Name,
         Position = footballTransfert.Position,
@@ -81,12 +80,12 @@ async def update_football_transfert(name: str, footballTransfert: Football_trans
         Market_value = footballTransfert.Market_value,
         Transfer_fee = footballTransfert.Transfer_fee
     ).where(football_transfers.c.Name == name))
-    return connection.execute(football_transfers.select()).fetchall()
+    return connection.execute(football_transfers.select().where(football_transfers.c.Name == name and football_transfers.c.team_from == team_from and football_transfers.c.team_to == team_to)).fetchall()
 
 @app.delete("/{name}")
 async def delete_football_transfert(name: str):
     connection.execute(football_transfers.delete().where(football_transfers.c.Name == name))
-    return connection.execute(football_transfers.select()).fetchall()
+    return connection.execute(football_transfers.select().where(football_transfers.c.Name == name)).fetchall()
 
 
 if __name__ == "__main__":
